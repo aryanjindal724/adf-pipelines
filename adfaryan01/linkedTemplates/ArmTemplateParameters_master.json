@@ -5,6 +5,21 @@
 		"factoryName": {
 			"value": "adfaryan01"
 		},
+		"AdvWorksDb_password": {
+			"value": ""
+		},
+		"BlobStorageForproducts_connectionString": {
+			"value": ""
+		},
+		"AdvWorksDb_properties_typeProperties_server": {
+			"value": "serveraryan01.database.windows.net"
+		},
+		"AdvWorksDb_properties_typeProperties_database": {
+			"value": "dbaryan01"
+		},
+		"AdvWorksDb_properties_typeProperties_userName": {
+			"value": "aryanjindal"
+		},
 		"containerUri": {
 			"value": ""
 		},
