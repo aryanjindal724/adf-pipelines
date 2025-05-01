@@ -17,6 +17,12 @@
 		"CustomerBlobStorage_connectionString": {
 			"value": ""
 		},
+		"ADLSGen2_accountKey": {
+			"value": ""
+		},
+		"ADLSGen2New_accountKey": {
+			"value": ""
+		},
 		"AdvWorksDb_properties_typeProperties_server": {
 			"value": "serveraryan01.database.windows.net"
 		},
@@ -34,6 +40,12 @@
 		},
 		"AzureSqlDatabase1_properties_typeProperties_userName": {
 			"value": "aryanjindal"
+		},
+		"ADLSGen2_properties_typeProperties_url": {
+			"value": "https://saaryan01.dfs.core.windows.net/"
+		},
+		"ADLSGen2New_properties_typeProperties_url": {
+			"value": "https://saadfaryanadls.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"value": ""
