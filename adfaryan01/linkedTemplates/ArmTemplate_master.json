@@ -11,13 +11,13 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AdvWorksDb'"
 		},
-		"BlobStorageForproducts_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'BlobStorageForproducts'"
-		},
 		"AzureSqlDatabase1_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
+		},
+		"BlobStorageForproducts_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'BlobStorageForproducts'"
 		},
 		"CustomerBlobStorage_connectionString": {
 			"type": "secureString",
@@ -77,11 +77,11 @@
 					"AdvWorksDb_password": {
 						"value": "[parameters('AdvWorksDb_password')]"
 					},
-					"BlobStorageForproducts_connectionString": {
-						"value": "[parameters('BlobStorageForproducts_connectionString')]"
-					},
 					"AzureSqlDatabase1_password": {
 						"value": "[parameters('AzureSqlDatabase1_password')]"
+					},
+					"BlobStorageForproducts_connectionString": {
+						"value": "[parameters('BlobStorageForproducts_connectionString')]"
 					},
 					"CustomerBlobStorage_connectionString": {
 						"value": "[parameters('CustomerBlobStorage_connectionString')]"
