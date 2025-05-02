@@ -43,6 +43,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'TripDataDb'"
 		},
+		"FlipkartBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'FlipkartBlobStorage1'"
+		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://saaryan01.dfs.core.windows.net/"
@@ -144,6 +148,9 @@
 					},
 					"TripDataDb_password": {
 						"value": "[parameters('TripDataDb_password')]"
+					},
+					"FlipkartBlobStorage1_connectionString": {
+						"value": "[parameters('FlipkartBlobStorage1_connectionString')]"
 					},
 					"ADLSGen2_properties_typeProperties_url": {
 						"value": "[parameters('ADLSGen2_properties_typeProperties_url')]"

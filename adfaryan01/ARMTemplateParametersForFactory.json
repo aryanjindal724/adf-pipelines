@@ -32,6 +32,9 @@
 		"TripDataDb_password": {
 			"value": ""
 		},
+		"FlipkartBlobStorage1_connectionString": {
+			"value": ""
+		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"value": "https://saaryan01.dfs.core.windows.net/"
 		},
