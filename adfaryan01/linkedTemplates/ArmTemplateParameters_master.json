@@ -11,6 +11,9 @@
 		"ADLSGen2New_accountKey": {
 			"value": ""
 		},
+		"ADLSTripData_accountKey": {
+			"value": ""
+		},
 		"AdvWorksDb_password": {
 			"value": ""
 		},
@@ -26,13 +29,13 @@
 		"TripDataDb_password": {
 			"value": ""
 		},
-		"ADLSTripData_accountKey": {
-			"value": ""
-		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"value": "https://saaryan01.dfs.core.windows.net/"
 		},
 		"ADLSGen2New_properties_typeProperties_url": {
+			"value": "https://saadfaryanadls.dfs.core.windows.net/"
+		},
+		"ADLSTripData_properties_typeProperties_url": {
 			"value": "https://saadfaryanadls.dfs.core.windows.net/"
 		},
 		"AdvWorksDb_properties_typeProperties_server": {
@@ -61,9 +64,6 @@
 		},
 		"TripDataDb_properties_typeProperties_userName": {
 			"value": "aryanjindal"
-		},
-		"ADLSTripData_properties_typeProperties_url": {
-			"value": "https://saadfaryanadls.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"value": ""

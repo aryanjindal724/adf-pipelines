@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ADLSGen2New'"
 		},
+		"ADLSTripData_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLSTripData'"
+		},
 		"AdvWorksDb_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AdvWorksDb'"
@@ -35,15 +39,15 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'TripDataDb'"
 		},
-		"ADLSTripData_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'ADLSTripData'"
-		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://saaryan01.dfs.core.windows.net/"
 		},
 		"ADLSGen2New_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://saadfaryanadls.dfs.core.windows.net/"
+		},
+		"ADLSTripData_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://saadfaryanadls.dfs.core.windows.net/"
 		},
@@ -82,10 +86,6 @@
 		"TripDataDb_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "aryanjindal"
-		},
-		"ADLSTripData_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://saadfaryanadls.dfs.core.windows.net/"
 		}
 	},
 	"variables": {
@@ -153,6 +153,23 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('ADLSGen2New_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ADLSTripData')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('ADLSTripData_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('ADLSTripData_accountKey')]"
 					}
 				}
 			},
@@ -245,23 +262,6 @@
 					"password": {
 						"type": "SecureString",
 						"value": "[parameters('TripDataDb_password')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ADLSTripData')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('ADLSTripData_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('ADLSTripData_accountKey')]"
 					}
 				}
 			},
@@ -621,6 +621,34 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/TripDataCsv')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ADLSTripData",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "TripData.csv",
+						"fileSystem": "tripdata"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ADLSTripData')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/TripDataTable')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -696,34 +724,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/TripDataDb')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/TripDataCsv')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "ADLSTripData",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": "TripData.csv",
-						"fileSystem": "tripdata"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ADLSTripData')]"
 			]
 		},
 		{
