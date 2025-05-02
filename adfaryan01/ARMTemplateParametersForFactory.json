@@ -26,6 +26,9 @@
 		"CustomerBlobStorage_connectionString": {
 			"value": ""
 		},
+		"TripAggregateBlob_connectionString": {
+			"value": ""
+		},
 		"TripDataDb_password": {
 			"value": ""
 		},

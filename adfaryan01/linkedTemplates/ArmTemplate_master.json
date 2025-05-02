@@ -35,6 +35,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'CustomerBlobStorage'"
 		},
+		"TripAggregateBlob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'TripAggregateBlob'"
+		},
 		"TripDataDb_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'TripDataDb'"
@@ -134,6 +138,9 @@
 					},
 					"CustomerBlobStorage_connectionString": {
 						"value": "[parameters('CustomerBlobStorage_connectionString')]"
+					},
+					"TripAggregateBlob_connectionString": {
+						"value": "[parameters('TripAggregateBlob_connectionString')]"
 					},
 					"TripDataDb_password": {
 						"value": "[parameters('TripDataDb_password')]"
