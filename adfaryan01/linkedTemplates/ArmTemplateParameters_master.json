@@ -26,13 +26,16 @@
 		"CustomerBlobStorage_connectionString": {
 			"value": ""
 		},
+		"FlipkartBlobStorage1_connectionString": {
+			"value": ""
+		},
 		"TripAggregateBlob_connectionString": {
 			"value": ""
 		},
 		"TripDataDb_password": {
 			"value": ""
 		},
-		"FlipkartBlobStorage1_connectionString": {
+		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
 		"ADLSGen2_properties_typeProperties_url": {
